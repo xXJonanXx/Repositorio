@@ -1,8 +1,13 @@
+
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { UserOutlined, LaptopOutlined, NotificationOutlined } from '@ant-design/icons';
 import style from '../styles/index.module.css'
 import React, {useState, useEffect} from 'react'
 import {DataGrid} from '@material-ui/data-grid'
+import { PieChart } from 'react-minimal-pie-chart';
+
+
+
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -14,6 +19,7 @@ const columns = [
   
 ]
 
+
 const indexPage = () =>{
 
   const [tableData, setTableData] = useState([])
@@ -22,6 +28,8 @@ const indexPage = () =>{
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((data) => data.json())
       .then((data) => setTableData(data))
+
+     
   })
     return(
         <Layout>
@@ -71,6 +79,16 @@ const indexPage = () =>{
         checkboxSelection
       />
     </div>
+    <PieChart
+  data={[
+    { title: 'ide', value: 50, color: '#E38627', },
+    { title: 'title', value: 25, color: '#C13C37' },
+    { title: 'body', value: 25, color: '#6A2135' },
+
+  ]}radius={20}
+/>;
+
+
           </Layout>
         </Layout>
       </Layout>
