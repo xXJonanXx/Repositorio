@@ -5,6 +5,7 @@ import style from '../styles/index.module.css'
 import React, {useState, useEffect} from 'react'
 import {DataGrid} from '@material-ui/data-grid'
 import { PieChart } from 'react-minimal-pie-chart';
+import QRCode from "react-qr-code";
 
 
 
@@ -87,7 +88,11 @@ const indexPage = () =>{
 
   ]}radius={20}
 />;
+<div>
+<QRCode value="https://www.educa-t.unach.mx/?redirect=0"size="256" ></QRCode>
 
+  
+</div>
 
           </Layout>
         </Layout>
